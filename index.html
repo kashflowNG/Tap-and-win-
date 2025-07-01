@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tap and Win</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      animation: slideIn 1.2s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .ad-placeholder {
+      margin: 30px 0;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px dashed #aaa;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+      align-items: center;
+    }
+
+    .tap-button {
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+    }
+
+    /* Neon Button */
+    .tap-button.neon {
+      background: #00f2fe;
+      color: #000;
+      box-shadow: 0 0 12px #00f2fe, 0 0 24px #00f2fe;
+    }
+
+    .tap-button.neon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 16px #00f2fe, 0 0 32px #00f2fe;
+    }
+
+    /* Outline Button */
+    .tap-button.outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #00c9ff;
+    }
+
+    .tap-button.outline:hover {
+      background: #00c9ff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Pulse Shine Button */
+    .tap-button.pulse {
+      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      color: black;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .tap-button.pulse::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: skewX(-20deg);
+      animation: shine 2.5s infinite;
+      z-index: -1;
+    }
+
+    @keyframes shine {
+      0% { left: -75%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    .sticky-ad {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 15px 10px;
+      border-top: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 🔝 Top Banner Ad -->
+    <div class="ad-placeholder">Example: Top social banner here</div>
+
+    <!-- 🎯 Main Card -->
+    <div class="card">
+      <h1>🎉 Tap & Win</h1>
+      <p>Tap the button below for your chance to win real rewards!</p>
+
+      <!-- 📺 Video Ad -->
+      <div class="ad-placeholder">Example: Video ad here</div>
+
+      <!-- 🚀 Tap Buttons -->
+      <div class="cta-buttons">
+        <button class="tap-button neon">Tap & Win</button>
+        <button class="tap-button outline">Try Your Luck</button>
+        <button class="tap-button pulse">Instant Reward</button>
+      </div>
+
+      <!-- 📦 Native Ad -->
+      <div class="ad-placeholder">Example: Native banner ad here</div>
+    </div>
+  </div>
+
+  <!-- 📌 Sticky Footer Ad -->
+  <div class="sticky-ad">
+    <div class="ad-placeholder">Example: Sticky footer ad here</div>
+  </div>
+
+</body>
+</html>
